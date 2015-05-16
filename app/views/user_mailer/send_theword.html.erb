@@ -1,4 +1,4 @@
 <p>Dear <%= @receiver.contact.name %> </p>
 <p><%= @message.user.name %> 留了一則訊息給你</p>
 <p><%= @message.content %></p>
-<p><%= image_tag @message.image.url(:original) if @message.image.url %></p>
+<p><%= image_tag( asset_url( @message.image.url(:original), :host => Rails.application.config.action_mailer.default_url_options[:host] ) ) if @message.image.url %></p>
